@@ -15,6 +15,7 @@ class BlogDetailView(DetailView):
     template_name = 'post_detail.html'
 
 
+# CRUD
 class BlogCreateView(CreateView):
     model = Post
     template_name = 'post_new_form.html'
