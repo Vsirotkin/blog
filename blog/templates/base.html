@@ -12,6 +12,7 @@
 <body>
     <div>
         <header>
+            <!-- menu -->
             <div class="nav-left">
                 <h1><a href="{% url 'home' %}">Django Blogs</a></h1>
             </div>
@@ -19,10 +20,16 @@
                 <a href="{% url 'post_new' %}">New Blog Post</a>
             </div>
         </header>
-    </div>
-    
 
-    <div>
+        <!-- authentication -->
+        {% if user.is_authenticated %}
+            <p>Hi {{ user.username }}</p>
+            <p><a href="{% url 'logout' %}">Log Out</a></p>
+        {% else %}
+            <p class="login">Not Logged In. Please Enter Valid Credentials!</p>
+            <a href="{% url 'login' %}">Log In</a>
+        {% endif %}
+
         {% block content %}
         {% endblock content %}
     </div> 

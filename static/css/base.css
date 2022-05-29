@@ -47,3 +47,7 @@ text-decoration: none;
 .post-entry h2 a:hover {
     color: red;
 }
+
+.login {
+    color: red;
+}
