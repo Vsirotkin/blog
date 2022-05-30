@@ -18,6 +18,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('django.contrib.auth.urls')), # auth-form
+    path('accounts/', include('django.contrib.auth.urls')), # auth-form. order matters. first
+    path('accounts/', include('accounts.urls')), # for sign up. second.
     path('', include('blog.urls')),
 ]
