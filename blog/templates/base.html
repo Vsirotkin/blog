@@ -23,10 +23,10 @@
 
         <!-- authentication -->
         {% if user.is_authenticated %}
-            <p>Hi {{ user.username }}</p>
+            <p>Welcome, {{ user.username }}. Thanks for logging in.</p>
             <p><a href="{% url 'logout' %}">Log Out</a></p>
         {% else %}
-            <p class="login">Not Logged In. Please Enter Valid Credentials!</p>
+            <p>Welcome, new user. Please log in.</p>
             <a href="{% url 'login' %}">Log In</a>
         {% endif %}
 
